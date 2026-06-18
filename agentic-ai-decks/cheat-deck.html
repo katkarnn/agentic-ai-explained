@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Agentic AI — Cheat Code (Use When / When Not)</title>
+<link rel="stylesheet" href="deck.css">
+</head>
+<body>
+
+<div class="topbar">
+  <a class="brand" href="index.html">⌂ Index</a>
+  <a href="master-deck.html">Master</a>
+  <a href="cheat-deck.html">Cheat Code</a>
+  <span class="spacer"></span>
+  <span class="hint">↑ / ↓ or J / K to move · P to print</span>
+</div>
+
+<div class="deck">
+
+<!-- c1 -->
+<section class="slide cover" id="c1">
+  <div class="badge">🎯</div>
+  <div class="kicker">The Cheat Code · decision deck</div>
+  <h1>Which method, when —<br>and when NOT to.</h1>
+  <p class="lead">The forever mental model. For every methodology: use when ✅, avoid when ❌, and a one-line example. Revisit any time.</p>
+  <p class="foot">This is the short subset of the <a href="master-deck.html" style="color:var(--green)">Master deck</a>.</p>
+  <div class="pageno">1 / 27</div>
+</section>
+
+<!-- c2 -->
+<section class="slide light" id="c2">
+  <div class="kicker">How to read this deck</div>
+  <h1>3 columns, every slide</h1>
+  <div class="cards c3">
+    <div class="card green"><div class="ic">✅</div><h3>Use when</h3><p>The signals that mean "yes, this fits."</p></div>
+    <div class="card orange"><div class="ic">❌</div><h3>Don't use when</h3><p>The traps — reach for something simpler/safer.</p></div>
+    <div class="card"><div class="ic">🧒</div><h3>Example</h3><p>A plain, kid-level example to lock it in.</p></div>
+  </div>
+  <p class="foot">Golden rule first → then pick the lightest tool that fits. Heavier = pricier + harder to predict.</p>
+  <div class="pageno">2 / 27</div>
+</section>
+
+<!-- c3 -->
+<section class="slide" id="c3">
+  <div class="kicker">The master decision flow</div>
+  <h1>Start here, every time</h1>
+  <div class="cards" style="max-width:880px">
+    <div class="card"><h3>Q1 · Can one plain LLM call do it?</h3><p class="yes" style="color:var(--green)">→ Just call the model. No agent. Stop.</p></div>
+    <div class="card"><h3>Q2 · Can you write the steps in advance?</h3><p style="color:var(--green)">→ WORKFLOW (chaining / routing / parallel).</p></div>
+    <div class="card"><h3>Q3 · Do the steps depend on what's found at runtime?</h3><p style="color:var(--green)">→ AGENT (orchestrator / evaluator-loop / subagents).</p></div>
+    <div class="card green"><h3>Q4 · Risky, irreversible, or sensitive?</h3><p>→ Add guardrails + human-in-the-loop, always.</p></div>
+  </div>
+  <div class="pageno">3 / 27</div>
+</section>
+
+<!-- c4 -->
+<section class="slide dark2" id="c4">
+  <div class="kicker">The one question that ends confusion</div>
+  <h1>Who decides the steps?</h1>
+  <div class="two">
+    <div class="col"><h3>🗺️ YOU decide → Workflow</h3>
+      <ul><li>Steps fixed ahead of time</li><li>Predictable, cheap, easy to debug</li><li>Most "AI products" live here</li></ul></div>
+    <div class="col"><h3>🧭 The MODEL decides → Agent</h3>
+      <ul><li>Model picks its own steps at runtime</li><li>Flexible, self-correcting</li><li>Pricier &amp; harder to control</li></ul></div>
+  </div>
+  <p class="foot">If you can draw the flowchart before running it → workflow. If you can't → agent.</p>
+  <div class="pageno">4 / 27</div>
+</section>
+
+<!-- c5 -->
+<section class="slide light" id="c5">
+  <div class="kicker">All methods at a glance</div>
+  <h1>The quick-pick table</h1>
+  <table>
+    <tr><th>Method</th><th>Reach for it when…</th><th>Type</th></tr>
+    <tr><td>Single LLM call</td><td>One clear ask, no tools needed</td><td><span class="tag core">Base</span></td></tr>
+    <tr class="alt"><td>Prompt chaining</td><td>Clear, fixed, ordered steps</td><td><span class="tag wf">WF</span></td></tr>
+    <tr><td>Routing</td><td>Different input types → different handling</td><td><span class="tag wf">WF</span></td></tr>
+    <tr class="alt"><td>Parallelization</td><td>Independent subtasks / multiple opinions</td><td><span class="tag wf">WF</span></td></tr>
+    <tr><td>Orchestrator–workers</td><td>Subtasks unknown until runtime</td><td><span class="tag ag">AG</span></td></tr>
+    <tr class="alt"><td>Evaluator–optimizer</td><td>Quality matters + "good" is describable</td><td><span class="tag ag">AG</span></td></tr>
+    <tr><td>Subagents</td><td>Heavy research that clutters context</td><td><span class="tag ag">AG</span></td></tr>
+    <tr class="alt"><td>RAG</td><td>Answers need your own / fresh facts</td><td><span class="tag core">Memory</span></td></tr>
+    <tr><td>Tools / MCP</td><td>Model must touch the real world</td><td><span class="tag core">Hands</span></td></tr>
+    <tr class="alt"><td>Human-in-the-loop</td><td>Risky / irreversible / sensitive</td><td><span class="tag core">Safety</span></td></tr>
+  </table>
+  <div class="pageno">5 / 27</div>
+</section>
+
+<!-- c6 -->
+<section class="slide" id="c6">
+  <div class="kicker">Method · base</div>
+  <h1>Single LLM call</h1>
+  <div class="two">
+    <div class="col"><h3 class="yes" style="color:var(--green)">✅ Use when</h3>
+      <ul><li>One clear, self-contained ask</li><li>No tools or live data needed</li><li>Speed &amp; cost matter most</li></ul></div>
+    <div class="col"><h3 style="color:#ff8f6b">❌ Don't use when</h3>
+      <ul><li>It needs real-world info or actions</li><li>The task has several dependent steps</li><li>You need verified, current facts</li></ul></div>
+  </div>
+  <div class="callout kid"><div class="ic">🧒</div><div><span class="tag">EXAMPLE</span><br>✅ "Rewrite this sentence to be polite." &nbsp;❌ "Book me a flight" (needs tools).</div></div>
+  <p class="foot">Always the default. Don't add an agent until a plain call clearly can't do it.</p>
+  <div class="pageno">6 / 27</div>
+</section>
+
+<!-- c7 -->
+<section class="slide light" id="c7">
+  <div class="kicker">Method · workflow</div>
+  <h1>Prompt chaining</h1>
+  <div class="two">
+    <div class="col"><h3 style="color:var(--teal)">✅ Use when</h3>
+      <ul><li>Task splits into clear, ordered steps</li><li>Each step feeds the next</li><li>You want reliability over flexibility</li></ul></div>
+    <div class="col"><h3 style="color:#c2541f">❌ Don't use when</h3>
+      <ul><li>The order changes per request</li><li>Steps are independent (use parallel)</li><li>You don't know the steps yet</li></ul></div>
+  </div>
+  <div class="callout kid"><div class="ic">🧒</div><div><span class="tag">EXAMPLE</span><br>✅ Draft → make punchier → translate. &nbsp;❌ "Handle any customer email" (type varies → routing).</div></div>
+  <div class="pageno">7 / 27</div>
+</section>
+
+<!-- c8 -->
+<section class="slide" id="c8">
+  <div class="kicker">Method · workflow</div>
+  <h1>Routing</h1>
+  <div class="two">
+    <div class="col"><h3 class="yes" style="color:var(--green)">✅ Use when</h3>
+      <ul><li>Input falls into clear categories</li><li>Each category needs special handling</li><li>You can list the categories upfront</li></ul></div>
+    <div class="col"><h3 style="color:#ff8f6b">❌ Don't use when</h3>
+      <ul><li>There's really only one path</li><li>Categories blur / overlap constantly</li><li>The right path is unknown until mid-task</li></ul></div>
+  </div>
+  <div class="callout kid"><div class="ic">🧒</div><div><span class="tag">EXAMPLE</span><br>✅ Support tickets → billing / tech / refund. &nbsp;❌ A free-form research goal with no fixed buckets.</div></div>
+  <div class="pageno">8 / 27</div>
+</section>
+
+<!-- c9 -->
+<section class="slide light" id="c9">
+  <div class="kicker">Method · workflow</div>
+  <h1>Parallelization</h1>
+  <div class="two">
+    <div class="col"><h3 style="color:var(--teal)">✅ Use when</h3>
+      <ul><li>Subtasks are independent</li><li>You want speed (run all at once)</li><li>You want multiple opinions to cross-check</li></ul></div>
+    <div class="col"><h3 style="color:#c2541f">❌ Don't use when</h3>
+      <ul><li>Step B needs step A's result (chain instead)</li><li>Calls share a limited budget/rate limit</li><li>Merging the results is harder than the task</li></ul></div>
+  </div>
+  <div class="callout kid"><div class="ic">🧒</div><div><span class="tag">EXAMPLE</span><br>✅ Check grammar + facts + tone at once. &nbsp;❌ "Translate the summary" — needs the summary first.</div></div>
+  <div class="pageno">9 / 27</div>
+</section>
+
+<!-- c10 -->
+<section class="slide" id="c10">
+  <div class="kicker">Method · agent</div>
+  <h1>Orchestrator–workers</h1>
+  <div class="two">
+    <div class="col"><h3 class="yes" style="color:var(--green)">✅ Use when</h3>
+      <ul><li>You can't know the subtasks in advance</li><li>A big goal must be split on the fly</li><li>Subtasks need different skills</li></ul></div>
+    <div class="col"><h3 style="color:#ff8f6b">❌ Don't use when</h3>
+      <ul><li>You already know the steps (use a workflow)</li><li>The task is small &amp; cheap</li><li>You can't afford unpredictable cost</li></ul></div>
+  </div>
+  <div class="callout kid"><div class="ic">🧒</div><div><span class="tag">EXAMPLE</span><br>✅ "Build a landing page" → lead invents copy/design/image tasks. &nbsp;❌ "Resize this image" (one fixed step).</div></div>
+  <div class="pageno">10 / 27</div>
+</section>
+
+<!-- c11 -->
+<section class="slide light" id="c11">
+  <div class="kicker">Method · agent</div>
+  <h1>Evaluator–optimizer</h1>
+  <div class="two">
+    <div class="col"><h3 style="color:var(--teal)">✅ Use when</h3>
+      <ul><li>Quality really matters</li><li>You can clearly describe "good"</li><li>A first draft rarely nails it</li></ul></div>
+    <div class="col"><h3 style="color:#c2541f">❌ Don't use when</h3>
+      <ul><li>"Good" is fuzzy / can't be judged</li><li>Speed &amp; cost beat perfection</li><li>One pass is already good enough</li></ul></div>
+  </div>
+  <div class="callout kid"><div class="ic">🧒</div><div><span class="tag">EXAMPLE</span><br>✅ Polish an essay until score ≥ 0.9. &nbsp;❌ "Say hi to the user" (no need to grade-and-retry).</div></div>
+  <p class="foot">Always cap the retries — or it can loop forever.</p>
+  <div class="pageno">11 / 27</div>
+</section>
+
+<!-- c12 -->
+<section class="slide" id="c12">
+  <div class="kicker">Method · agent <span class="tag new">new</span></div>
+  <h1>Subagents</h1>
+  <div class="two">
+    <div class="col"><h3 class="yes" style="color:var(--green)">✅ Use when</h3>
+      <ul><li>A subtask needs lots of reading/searching</li><li>You want to keep the main context clean</li><li>Helpers can work independently in parallel</li></ul></div>
+    <div class="col"><h3 style="color:#ff8f6b">❌ Don't use when</h3>
+      <ul><li>The task is small (overkill + extra cost)</li><li>Subtasks depend tightly on each other</li><li>You need one continuous conversation</li></ul></div>
+  </div>
+  <div class="callout kid"><div class="ic">🧒</div><div><span class="tag">EXAMPLE</span><br>✅ "Audit 200 files" → a helper per batch returns just findings. &nbsp;❌ "Answer this one quick question."</div></div>
+  <div class="pageno">12 / 27</div>
+</section>
+
+<!-- c13 -->
+<section class="slide light" id="c13">
+  <div class="kicker">Capability · hands</div>
+  <h1>Tool use</h1>
+  <div class="two">
+    <div class="col"><h3 style="color:var(--teal)">✅ Use when</h3>
+      <ul><li>The model needs real-world data or actions</li><li>A reliable function exists for the job</li><li>Math/lookups it shouldn't guess</li></ul></div>
+    <div class="col"><h3 style="color:#c2541f">❌ Don't use when</h3>
+      <ul><li>The model already knows the answer well</li><li>You'd add 20 tools "just in case" (confuses it)</li><li>A write-tool is risky with no guardrail</li></ul></div>
+  </div>
+  <div class="callout kid"><div class="ic">🧒</div><div><span class="tag">EXAMPLE</span><br>✅ get_weather(), send_email(). &nbsp;❌ Giving a calculator tool to answer "what's 2+2".</div></div>
+  <p class="foot">Keep it to 1–5 well-described tools. Fewer, clearer tools = smarter agent.</p>
+  <div class="pageno">13 / 27</div>
+</section>
+
+<!-- c14 -->
+<section class="slide" id="c14">
+  <div class="kicker">Capability · hands <span class="tag new">new</span></div>
+  <h1>MCP (tool standard)</h1>
+  <div class="two">
+    <div class="col"><h3 class="yes" style="color:var(--green)">✅ Use when</h3>
+      <ul><li>You want reusable tools across apps</li><li>Connecting standard services (Drive, GitHub, DB)</li><li>Building for a team / ecosystem</li></ul></div>
+    <div class="col"><h3 style="color:#ff8f6b">❌ Don't use when</h3>
+      <ul><li>A tiny one-off script (a plain function is fine)</li><li>An MCP server adds setup you don't need</li><li>The tool is private &amp; used in one place only</li></ul></div>
+  </div>
+  <div class="callout kid"><div class="ic">🧒</div><div><span class="tag">EXAMPLE</span><br>✅ One "GitHub" plug every assistant can reuse. &nbsp;❌ A 5-line helper used by a single script.</div></div>
+  <div class="pageno">14 / 27</div>
+</section>
+
+<!-- c15 -->
+<section class="slide light" id="c15">
+  <div class="kicker">Capability · memory</div>
+  <h1>RAG</h1>
+  <div class="two">
+    <div class="col"><h3 style="color:var(--teal)">✅ Use when</h3>
+      <ul><li>Answers need your private/company docs</li><li>Facts change &amp; must stay current</li><li>You want to cut hallucinations</li></ul></div>
+    <div class="col"><h3 style="color:#c2541f">❌ Don't use when</h3>
+      <ul><li>The answer is general knowledge</li><li>The whole doc already fits in context</li><li>Data changes every second (use a live tool)</li></ul></div>
+  </div>
+  <div class="callout kid"><div class="ic">🧒</div><div><span class="tag">EXAMPLE</span><br>✅ "Answer from our HR handbook." &nbsp;❌ "What's the capital of France?" (it just knows).</div></div>
+  <div class="pageno">15 / 27</div>
+</section>
+
+<!-- c16 -->
+<section class="slide" id="c16">
+  <div class="kicker">Capability · hands <span class="tag new">new</span></h1></div>
+  <h1>Computer / browser use</h1>
+  <div class="two">
+    <div class="col"><h3 class="yes" style="color:var(--green)">✅ Use when</h3>
+      <ul><li>There's NO API — only a screen/website</li><li>Legacy apps you can't change</li><li>Repetitive click-through tasks</li></ul></div>
+    <div class="col"><h3 style="color:#ff8f6b">❌ Don't use when</h3>
+      <ul><li>A clean API exists (use it — faster, safer)</li><li>Speed &amp; reliability are critical</li><li>The action is high-risk with no human check</li></ul></div>
+  </div>
+  <div class="callout kid"><div class="ic">🧒</div><div><span class="tag">EXAMPLE</span><br>✅ Order on an old supplier site with no API. &nbsp;❌ Checking weather (there's a perfect API).</div></div>
+  <p class="foot">Slowest + most error-prone tool. Last resort, always with a human gate for risky steps.</p>
+  <div class="pageno">16 / 27</div>
+</section>
+
+<!-- c17 -->
+<section class="slide light" id="c17">
+  <div class="kicker">Technique · thinking <span class="tag new">new</span></div>
+  <h1>Planning &amp; reflection</h1>
+  <div class="two">
+    <div class="col"><h3 style="color:var(--teal)">✅ Use when</h3>
+      <ul><li>Long, multi-step tasks</li><li>Mistakes are likely &amp; costly</li><li>The agent tends to wander off</li></ul></div>
+    <div class="col"><h3 style="color:#c2541f">❌ Don't use when</h3>
+      <ul><li>Short, simple tasks (adds cost + delay)</li><li>Latency matters more than perfection</li><li>One pass is reliably correct</li></ul></div>
+  </div>
+  <div class="callout kid"><div class="ic">🧒</div><div><span class="tag">EXAMPLE</span><br>✅ Plan an essay, then re-check it. &nbsp;❌ Re-planning before answering "what's 5×5".</div></div>
+  <div class="pageno">17 / 27</div>
+</section>
+
+<!-- c18 -->
+<section class="slide" id="c18">
+  <div class="kicker">Safety · always consider</div>
+  <h1>Human-in-the-loop</h1>
+  <div class="two">
+    <div class="col"><h3 class="yes" style="color:var(--green)">✅ Use when</h3>
+      <ul><li>Action costs money / is irreversible</li><li>Touches sensitive or private data</li><li>The agent is unsure / low confidence</li></ul></div>
+    <div class="col"><h3 style="color:#ff8f6b">❌ Skip it when</h3>
+      <ul><li>Action is trivially reversible</li><li>Read-only, low-stakes lookups</li><li>Asking every time would annoy users</li></ul></div>
+  </div>
+  <div class="callout kid"><div class="ic">🧒</div><div><span class="tag">EXAMPLE</span><br>✅ "Confirm before transferring $5,000." &nbsp;❌ "Confirm before reading a public webpage."</div></div>
+  <p class="foot">Rule of thumb: easy to undo → let it run. Hard to undo → ask first.</p>
+  <div class="pageno">18 / 27</div>
+</section>
+
+<!-- c19 -->
+<section class="slide light" id="c19">
+  <div class="kicker">Choosing memory</div>
+  <h1>Which memory? Pick by question</h1>
+  <table>
+    <tr><th>If you need…</th><th>Use</th><th>Don't reach for it when</th></tr>
+    <tr><td>"What did we just say?"</td><td class="yes">Short-term (context)</td><td>You need it to survive the run → won't</td></tr>
+    <tr class="alt"><td>"What do I know across runs?"</td><td class="yes">Long-term (RAG / agent memory)</td><td>It's a one-off chat → overkill</td></tr>
+    <tr><td>"Where did I pause?"</td><td class="yes">Workflow state (checkpoints)</td><td>The task is instant → not needed</td></tr>
+  </table>
+  <div class="callout kid"><div class="ic">🧒</div><div><span class="tag">EXAMPLE</span><br>Sticky note = now. Filing cabinet = forever. Bookmark = where you stopped.</div></div>
+  <div class="pageno">19 / 27</div>
+</section>
+
+<!-- c20 -->
+<section class="slide" id="c20">
+  <div class="kicker">Build decision <span class="tag new">new</span></div>
+  <h1>Prompt vs RAG vs Fine-tune</h1>
+  <table>
+    <tr><th>Use…</th><th>When</th><th>Avoid when</th></tr>
+    <tr><td>Prompting</td><td class="yes">Almost always — try first</td><td>It needs facts it doesn't have</td></tr>
+    <tr class="alt"><td>RAG</td><td class="yes">Needs your own/fresh facts</td><td>It's general knowledge</td></tr>
+    <tr><td>Fine-tuning</td><td class="yes">Fixed style/format or niche skill, at scale</td><td>You haven't maxed out prompt + RAG yet</td></tr>
+  </table>
+  <div class="callout kid"><div class="ic">🧒</div><div><span class="tag">EXAMPLE</span><br>Ask the friend → give them the book → send them to school. Try the cheap one first!</div></div>
+  <p class="foot">Order: prompt → RAG → fine-tune. Most problems stop at the first two.</p>
+  <div class="pageno">20 / 27</div>
+</section>
+
+<!-- c21 -->
+<section class="slide light" id="c21">
+  <div class="kicker">Cost · technique <span class="tag new">new</span></div>
+  <h1>Caching</h1>
+  <div class="two">
+    <div class="col"><h3 style="color:var(--teal)">✅ Use when</h3>
+      <ul><li>A big fixed prompt repeats every call</li><li>Loops re-send the same instructions</li><li>You want lower cost + faster replies</li></ul></div>
+    <div class="col"><h3 style="color:#c2541f">❌ Won't help when</h3>
+      <ul><li>Every prompt is totally different</li><li>The repeated part is tiny</li><li>Calls are rare &amp; far apart</li></ul></div>
+  </div>
+  <div class="callout kid"><div class="ic">🧒</div><div><span class="tag">EXAMPLE</span><br>✅ Same rules before every quiz → write them on the board once. &nbsp;❌ A one-time question.</div></div>
+  <div class="pageno">21 / 27</div>
+</section>
+
+<!-- c22 -->
+<section class="slide" id="c22">
+  <div class="kicker">Run-style · technique <span class="tag new">new</span></div>
+  <h1>Async / durable / scheduled</h1>
+  <div class="two">
+    <div class="col"><h3 class="yes" style="color:var(--green)">✅ Use when</h3>
+      <ul><li>The task takes minutes–hours</li><li>It must survive crashes (durable)</li><li>It should run on a schedule</li></ul></div>
+    <div class="col"><h3 style="color:#ff8f6b">❌ Don't use when</h3>
+      <ul><li>It's a quick, interactive chat</li><li>The user is waiting in real time</li><li>Extra infra isn't worth it</li></ul></div>
+  </div>
+  <div class="callout kid"><div class="ic">🧒</div><div><span class="tag">EXAMPLE</span><br>✅ "Each morning, summarize overnight emails." &nbsp;❌ "What's 12 × 8?" (answer now).</div></div>
+  <div class="pageno">22 / 27</div>
+</section>
+
+<!-- c23 -->
+<section class="slide light" id="c23">
+  <div class="kicker">Safety · non-negotiable <span class="tag new">new</span></div>
+  <h1>Guardrails &amp; injection defense</h1>
+  <div class="two">
+    <div class="col"><h3 style="color:var(--teal)">✅ Always when</h3>
+      <ul><li>Agent reads web/email/user files</li><li>It can send, pay, delete, or share data</li><li>It handles personal/sensitive info</li></ul></div>
+    <div class="col"><h3 style="color:#c2541f">❌ Never skip because…</h3>
+      <ul><li>"It worked in testing" (attackers adapt)</li><li>"It's internal only" (insiders + mistakes)</li><li>"The model seems smart" (it can be tricked)</li></ul></div>
+  </div>
+  <div class="callout kid"><div class="ic">🧒</div><div><span class="tag">DEFENSES</span><br>Least-privilege tools · sandbox actions · treat outside text as data, never commands · guardrails on input AND output.</div></div>
+  <div class="pageno">23 / 27</div>
+</section>
+
+<!-- c24 -->
+<section class="slide" id="c24">
+  <div class="kicker">Quality · non-negotiable <span class="tag new">new</span></div>
+  <h1>Evals</h1>
+  <div class="two">
+    <div class="col"><h3 class="yes" style="color:var(--green)">✅ Build them when</h3>
+      <ul><li>The agent ships to real users</li><li>You'll keep changing prompts/models</li><li>Wrong answers have real consequences</li></ul></div>
+    <div class="col"><h3 style="color:#ff8f6b">❌ Insufficient when</h3>
+      <ul><li>You only "eyeball" a few outputs</li><li>You rely on the model grading itself alone</li><li>No regression check after changes</li></ul></div>
+  </div>
+  <div class="callout kid"><div class="ic">🧒</div><div><span class="tag">EXAMPLE</span><br>Keep an answer key + practice questions. Re-test every time you change your method.</div></div>
+  <div class="pageno">24 / 27</div>
+</section>
+
+<!-- c25 -->
+<section class="slide light" id="c25">
+  <div class="kicker">Cost · always</div>
+  <h1>Cost controls (always on)</h1>
+  <table>
+    <tr><th>Control</th><th>Why</th></tr>
+    <tr><td>Cap max loop turns</td><td class="yes">Stops a runaway agent burning tokens forever</td></tr>
+    <tr class="alt"><td>Trim / compact context</td><td class="yes">Don't resend the whole history each call</td></tr>
+    <tr><td>Right-size the model</td><td class="yes">Small for easy steps, big only for hard ones</td></tr>
+    <tr class="alt"><td>Cache fixed prompts</td><td class="yes">Pay once for the unchanged part</td></tr>
+  </table>
+  <p class="foot">These aren't optional extras — they're the difference between a demo and a product.</p>
+  <div class="pageno">25 / 27</div>
+</section>
+
+<!-- c26 -->
+<section class="slide" id="c26">
+  <div class="kicker">The big "DON'T"</div>
+  <h1>When NOT to build an agent at all</h1>
+  <div class="cards c2">
+    <div class="card orange"><div class="ic">🚫</div><h3>A workflow fits</h3><p>You can write the steps → don't hand control to the model.</p></div>
+    <div class="card orange"><div class="ic">🚫</div><h3>One call works</h3><p>Plain LLM call answers it → no loop needed.</p></div>
+    <div class="card orange"><div class="ic">🚫</div><h3>Zero error tolerance</h3><p>Use deterministic code, not a probabilistic agent.</p></div>
+    <div class="card orange"><div class="ic">🚫</div><h3>Can't observe / cap it</h3><p>No tracing, no limits → don't ship it yet.</p></div>
+  </div>
+  <p class="foot">Agents are powerful but pricier and less predictable. Don't reach for one out of habit.</p>
+  <div class="pageno">26 / 27</div>
+</section>
+
+<!-- c27 -->
+<section class="slide cover" id="c27">
+  <div class="badge">🧠</div>
+  <div class="kicker">One-screen summary · screenshot this</div>
+  <h1>The forever rule</h1>
+  <div class="term" style="max-width:760px">
+    <div class="bar"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="fname">cheat.txt</span></div>
+    <pre><span class="c"># climb only as high as you must</span>
+1 call        → simplest, try first
+chaining      → fixed ordered steps
+routing       → sort, then fixed path
+parallel      → independent / cross-check
+orchestrator  → subtasks unknown till runtime
+evaluator     → quality matters, "good" is clear
+subagents     → heavy research, keep context clean
+
+<span class="g">+ always:</span> tools (1–5) · RAG for your facts
+<span class="g">+ always:</span> guardrails · human gate for risky
+<span class="g">+ always:</span> caching · cost cap · tracing · evals</pre>
+  </div>
+  <p class="foot">Lightest tool that works. Workflow first, agent only if you must. <a href="master-deck.html" style="color:var(--green)">Full details → Master deck</a>.</p>
+  <div class="pageno">27 / 27</div>
+</section>
+
+</div>
+
+<script>
+const slides=[...document.querySelectorAll('.slide')];
+function go(d){const y=window.scrollY+10;let i=slides.findIndex(s=>s.offsetTop>y);if(d>0){if(i<0)i=slides.length-1;}else{i=slides.findIndex(s=>s.offsetTop>=y-20)-1;if(i<-1)i=slides.length-1;}i=Math.max(0,Math.min(slides.length-1,i));slides[i].scrollIntoView({behavior:'smooth'});}
+addEventListener('keydown',e=>{
+  if(e.key==='ArrowDown'||e.key==='j'){e.preventDefault();go(1);}
+  if(e.key==='ArrowUp'||e.key==='k'){e.preventDefault();go(-1);}
+  if(e.key==='p'){window.print();}
+});
+</script>
+</body>
+</html>
